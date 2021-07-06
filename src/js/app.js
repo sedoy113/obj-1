@@ -1,14 +1,14 @@
 export default function orderByProps(objectSort, arrSort = []) {
-  let arrAllKey = [];
+  let arrKey = [];
   for (const key in objectSort) {
     if (!arrSort.includes(key)) {
-      arrAllKey.push(key);
+      arrKey.push(key);
     }
   }
-  arrAllKey = [...arrSort, ...arrAllKey.sort()];
+  arrKey = [...arrSort, ...arrKey.sort()];
 
   const result = [];
-  for (const key of arrAllKey) {
+  for (const key of arrKey) {
     result.push({ key, value: objectSort[key] });
   }
   return result;
